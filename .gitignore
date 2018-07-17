@@ -3,6 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+lib/*.dll
+
 # User-specific files
 *.suo
 *.user
@@ -16,6 +18,8 @@
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
+[Rr]elease_Verbose/
+Static_[Rr]elease/
 [Rr]eleases/
 x64/
 x86/
