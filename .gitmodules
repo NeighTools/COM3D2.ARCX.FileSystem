@@ -1,6 +1,3 @@
-[submodule "lib/minhook"]
-	path = lib/minhook
-	url = https://github.com/TsudaKageyu/minhook.git
 [submodule "lib/libarcx"]
 	path = lib/libarcx
 	url = https://github.com/NeighTools/libarcx.git

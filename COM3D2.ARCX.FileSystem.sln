@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARCXFS", "ARCXFS\ARCXFS.vcx
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{FE089E69-17CB-4E18-9D40-36D4BE8C9041}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libMinHook", "lib\minhook\build\VC15\libMinHook.vcxproj", "{F142A341-5EE0-442D-A15F-98AE9B48DBAE}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libarcx", "lib\libarcx\libarcx\libarcx.vcxproj", "{46E699C7-6C10-4743-B282-3C8B9FC8E5A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COM3D2.ARCXLoader.Patcher", "COM3D2.ARCXLoader.Patcher\COM3D2.ARCXLoader.Patcher.csproj", "{FAA39440-B588-42C7-A321-56FBAD653F88}"
@@ -50,27 +48,6 @@ Global
 		{8EB0A97E-8E3F-4A4A-BC2D-5C935894C75F}.Static_Release|x64.Build.0 = Release|x64
 		{8EB0A97E-8E3F-4A4A-BC2D-5C935894C75F}.Static_Release|x86.ActiveCfg = Release|Win32
 		{8EB0A97E-8E3F-4A4A-BC2D-5C935894C75F}.Static_Release|x86.Build.0 = Release|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Debug|x64.ActiveCfg = Debug|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Debug|x64.Build.0 = Debug|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Debug|x86.ActiveCfg = Debug|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Debug|x86.Build.0 = Debug|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release_Verbose|Any CPU.ActiveCfg = Release_Verbose|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release_Verbose|x64.ActiveCfg = Release_Verbose|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release_Verbose|x64.Build.0 = Release_Verbose|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release_Verbose|x86.ActiveCfg = Release|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release_Verbose|x86.Build.0 = Release|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release|Any CPU.ActiveCfg = Release|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release|x64.ActiveCfg = Release|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release|x64.Build.0 = Release|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release|x86.ActiveCfg = Release|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Release|x86.Build.0 = Release|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Static_Release|Any CPU.ActiveCfg = Release_Verbose|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Static_Release|Any CPU.Build.0 = Release_Verbose|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Static_Release|x64.ActiveCfg = Release|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Static_Release|x64.Build.0 = Release|x64
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Static_Release|x86.ActiveCfg = Release|Win32
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE}.Static_Release|x86.Build.0 = Release|Win32
 		{46E699C7-6C10-4743-B282-3C8B9FC8E5A1}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{46E699C7-6C10-4743-B282-3C8B9FC8E5A1}.Debug|x64.ActiveCfg = Debug|x64
 		{46E699C7-6C10-4743-B282-3C8B9FC8E5A1}.Debug|x64.Build.0 = Debug|x64
@@ -120,7 +97,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F142A341-5EE0-442D-A15F-98AE9B48DBAE} = {FE089E69-17CB-4E18-9D40-36D4BE8C9041}
 		{46E699C7-6C10-4743-B282-3C8B9FC8E5A1} = {FE089E69-17CB-4E18-9D40-36D4BE8C9041}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

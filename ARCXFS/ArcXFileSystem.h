@@ -1,6 +1,9 @@
 #pragma once
 
 #include <vector>
+#include <arcx.h>
+#include <map>
+#include <unordered_map>
 
 // Size od the filesystem object in quadwords
 #define FS_ARCHIVE_OBJECT_BASE_SIZE_QWORDS 0x10
@@ -31,6 +34,8 @@ struct ArcXArchiveData
 	void **base;
 	std::ofstream *logger;
 	OriginalFunctions *original_funcs;
+	std::vector<ArcXContainer*> containers;
+	std::unordered_map<std::wstring, ArcXFile*> files;
 	// TODO: Add data
 };
 
@@ -49,7 +54,7 @@ DEF_FUNC(GetFileWide, void*, FileSystemArchiveNative *fs, wchar_t *path);
 
 // Third vtable
 
-DEF_FUNC(CreateList, std::vector<std::string*> *, FileSystemArchiveNative *fs, std::vector<std::string*> *list, char *
+DEF_FUNC(CreateList, std::vector<std::string> *, FileSystemArchiveNative *fs, std::vector<std::string> *list, char *
 	path, ListType list_type);
 DEF_FUNC(GetFile, void*, FileSystemArchiveNative *fs, char *file_str);
 
