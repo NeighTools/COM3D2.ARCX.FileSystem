@@ -235,14 +235,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ArcXFileSystem.h" />
-    <ClInclude Include="CMFilePointer.h" />
+    <ClInclude Include="FileMemory.h" />
     <ClInclude Include="hook.h" />
     <ClInclude Include="logging.h" />
+    <ClInclude Include="ProxyFileMemory.h" />
+    <ClInclude Include="WindowsFile.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArcProxy.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="ArcXFileSystem.cpp" />
-    <ClCompile Include="CMFilePointer.cpp" />
+    <ClCompile Include="ProxyFileMemory.cpp" />
+    <ClCompile Include="WindowsFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\lib\libarcx\libarcx\libarcx.vcxproj">

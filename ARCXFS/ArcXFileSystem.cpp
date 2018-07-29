@@ -1,7 +1,8 @@
 #include <string>
 #include "ArcXFileSystem.h"
 #include "logging.h"
-#include "CMFilePointer.h"
+#include "WindowsFile.h"
+#include "ProxyFileMemory.h"
 #include <unordered_set>
 
 namespace fs = std::experimental::filesystem;
@@ -101,8 +102,9 @@ void *GetFile(FileSystemArchiveNative *fs, char *file_str)
 	auto self = GET_ARCX_THIS(fs, 4);
 	LOG_ARCX(self, "FILE: " << file_str);
 
-	auto file = self->original_funcs->GetFile(fs, file_str);
-
+	FileMemory* file = reinterpret_cast<FileMemory *>(self->original_funcs->GetFile(fs, file_str));
+	if (file != nullptr)
+		return new ProxyFileMemory(self, file, file_str);
 	return file;
 }
 
@@ -114,7 +116,7 @@ void *GetFileWide(FileSystemArchiveNative *fs, wchar_t *path)
 
 	// TODO: Remove test code
 
-	fs::path p("FS_Proxy");
+	/*fs::path p("FS_Proxy");
 	p /= path;
 
 	LOG_ARCX(self, "Looking for " << fs::canonical(p));
@@ -122,8 +124,11 @@ void *GetFileWide(FileSystemArchiveNative *fs, wchar_t *path)
 	if(fs::exists(p))
 	{
 		LOG_ARCX(self, "Found proxy file! Returning that!");
-		return new CMFilePointer(self, p);
-	}
+		return new WindowsFile(self, p);
+	}*/
 
-	return self->original_funcs->GetFileWide(fs, path);
+	FileMemory *res = reinterpret_cast<FileMemory*>(self->original_funcs->GetFileWide(fs, path));
+	if(res != nullptr)
+		return new ProxyFileMemory(self, res, narrow(path));
+	return res;
 }

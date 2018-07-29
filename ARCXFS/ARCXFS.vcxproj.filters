@@ -13,30 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\FilePointers">
+      <UniqueIdentifier>{3392e88c-af77-45cb-b91f-05b60653d11d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FilePointers">
+      <UniqueIdentifier>{e66084bf-eb04-4f04-90f3-db7b59f616f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{b543c9e9-154f-40e4-9120-134dfd844e91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="logging.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ArcXFileSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CMFilePointer.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="logging.h">
+      <Filter>Header Files\Util</Filter>
     </ClInclude>
     <ClInclude Include="hook.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="FileMemory.h">
+      <Filter>Header Files\FilePointers</Filter>
+    </ClInclude>
+    <ClInclude Include="ProxyFileMemory.h">
+      <Filter>Header Files\FilePointers</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsFile.h">
+      <Filter>Header Files\FilePointers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArcProxy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ArcXFileSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CMFilePointer.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProxyFileMemory.cpp">
+      <Filter>Source Files\FilePointers</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsFile.cpp">
+      <Filter>Source Files\FilePointers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
