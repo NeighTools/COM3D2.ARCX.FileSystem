@@ -19,6 +19,20 @@ static std::string narrow(std::wstring const& str)
 	return result;
 }
 
+static std::string narrow_view(std::wstring_view const& str)
+{
+	const auto char_len = WideCharToMultiByte(CP_UTF8, 0, str.data(), str.length(), nullptr, 0, nullptr, nullptr);
+
+	if (char_len == 0)
+		return "";
+
+	std::string result;
+	result.resize(char_len);
+	WideCharToMultiByte(CP_UTF8, 0, str.data(), str.size(), const_cast<char*>(result.c_str()), char_len, nullptr,
+		nullptr);
+	return result;
+}
+
 static std::wstring widen(std::string const& str)
 {
 	const auto char_len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), nullptr, 0);
@@ -38,7 +52,7 @@ static std::ofstream *LogStream = nullptr;
 
 
 #define LOG(msg) *LogStream << msg << std::endl
-#define LOG_ARCX(data, msg) //*(data->logger) << msg << std::endl;
+#define LOG_ARCX(data, msg) *(data->logger) << msg << std::endl;
 #define N(str) narrow(str)
 #define INIT_LOG(path) init_log(path)
 

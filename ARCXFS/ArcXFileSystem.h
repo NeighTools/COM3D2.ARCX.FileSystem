@@ -35,7 +35,8 @@ struct ArcXArchiveData
 	std::ofstream *logger;
 	OriginalFunctions *original_funcs;
 	std::vector<ArcXContainer*> containers;
-	std::unordered_map<std::wstring, ArcXFile*> files;
+	std::unordered_map<std::wstring, ArcXFile*> files_by_name;
+	std::unordered_map<std::wstring_view, ArcXFile*> files_by_path;
 	// TODO: Add data
 };
 

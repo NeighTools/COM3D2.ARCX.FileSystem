@@ -24,7 +24,7 @@ ProxyFileMemory * ProxyFileMemory::dispose(bool disposing)
 	if(disposing)
 	{
 		auto t = std::chrono::steady_clock::now();
-		LOG_ARCX2(this->data, "$" << this->fileName << ";" << std::dec << std::chrono::duration_cast<std::chrono::microseconds>(t - this->creationTime).count() << ";" << this->reads << ";" << this->ptr_gets << ";" << this->seeks << ";" << this->tells << ";" << this->length_checks);
+		//LOG_ARCX2(this->data, "$" << this->fileName << ";" << std::dec << std::chrono::duration_cast<std::chrono::microseconds>(t - this->creationTime).count() << ";" << this->reads << ";" << this->ptr_gets << ";" << this->seeks << ";" << this->tells << ";" << this->length_checks);
 	}
 
 	if (disposing)
@@ -85,14 +85,14 @@ uint64_t ProxyFileMemory::length()
 
 bool ProxyFileMemory::set_file(void * data, uint64_t data_length, uint64_t file_offset)
 {
-	LOG_ARCX2(this->data, "PROXY: Reinitializing file pointer to different file");
+	//LOG_ARCX2(this->data, "PROXY: Reinitializing file pointer to different file");
 
 	return this->nativeFile->set_file(data, data_length, file_offset);
 }
 
 bool ProxyFileMemory::set_file2(void * data, uint64_t data_length, uint64_t file_offset)
 {
-	LOG_ARCX2(this->data, "PROXY: Reinitializing file pointer to different file [2]");
+	//LOG_ARCX2(this->data, "PROXY: Reinitializing file pointer to different file [2]");
 
 	return this->nativeFile->set_file2(data, data_length, file_offset);
 }
