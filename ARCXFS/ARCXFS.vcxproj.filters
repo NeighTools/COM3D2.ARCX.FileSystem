@@ -22,6 +22,15 @@
     <Filter Include="Header Files\Util">
       <UniqueIdentifier>{b543c9e9-154f-40e4-9120-134dfd844e91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\FileAllocators">
+      <UniqueIdentifier>{9f3fc84f-b636-4649-95a2-3fa0370f39bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FileAllocators\LRU">
+      <UniqueIdentifier>{61317c3c-93bc-4dff-9cb5-c5989de86bf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FileAllocators\Pool">
+      <UniqueIdentifier>{cc50428a-ce47-40fb-8d58-ddded822ea91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArcXFileSystem.h">
@@ -42,6 +51,18 @@
     <ClInclude Include="WindowsFile.h">
       <Filter>Header Files\FilePointers</Filter>
     </ClInclude>
+    <ClInclude Include="IAllocator.h">
+      <Filter>Header Files\FileAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="LRUAllocator.h">
+      <Filter>Header Files\FileAllocators\LRU</Filter>
+    </ClInclude>
+    <ClInclude Include="LRUFileMemory.h">
+      <Filter>Header Files\FileAllocators\LRU</Filter>
+    </ClInclude>
+    <ClInclude Include="PoolAllocator.h">
+      <Filter>Header Files\FileAllocators\Pool</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArcXFileSystem.cpp">
@@ -55,6 +76,12 @@
     </ClCompile>
     <ClCompile Include="WindowsFile.cpp">
       <Filter>Source Files\FilePointers</Filter>
+    </ClCompile>
+    <ClCompile Include="LRUAllocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LRUFileMemory.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

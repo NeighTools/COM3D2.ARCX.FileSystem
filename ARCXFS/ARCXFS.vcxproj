@@ -239,11 +239,17 @@
     <ClInclude Include="ArcXFileSystem.h" />
     <ClInclude Include="FileMemory.h" />
     <ClInclude Include="hook.h" />
+    <ClInclude Include="IAllocator.h" />
     <ClInclude Include="logging.h" />
+    <ClInclude Include="LRUAllocator.h" />
+    <ClInclude Include="LRUFileMemory.h" />
+    <ClInclude Include="PoolAllocator.h" />
     <ClInclude Include="ProxyFileMemory.h" />
     <ClInclude Include="WindowsFile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LRUAllocator.cpp" />
+    <ClCompile Include="LRUFileMemory.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ArcXFileSystem.cpp" />
     <ClCompile Include="ProxyFileMemory.cpp" />

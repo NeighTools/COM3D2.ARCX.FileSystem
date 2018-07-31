@@ -4,6 +4,7 @@
 #include <arcx.h>
 #include <map>
 #include <unordered_map>
+#include "LRUAllocator.h"
 
 // Size od the filesystem object in quadwords
 #define FS_ARCHIVE_OBJECT_BASE_SIZE_QWORDS 0x10
@@ -37,6 +38,7 @@ struct ArcXArchiveData
 	std::vector<ArcXContainer*> containers;
 	std::unordered_map<std::wstring, ArcXFile*> files_by_name;
 	std::unordered_map<std::wstring_view, ArcXFile*> files_by_path;
+	LRUAllocator *allocator;
 	// TODO: Add data
 };
 
@@ -52,12 +54,15 @@ DEF_FUNC(AddAutoPath, void, FileSystemArchiveNative *fs, char *path);
 // Second vtable
 
 DEF_FUNC(GetFileWide, void*, FileSystemArchiveNative *fs, wchar_t *path);
+DEF_FUNC(FileExistsWide, bool, FileSystemArchiveNative *fs, wchar_t *path);
+DEF_FUNC(CreateListWide, std::vector<std::wstring> *, FileSystemArchiveNative *fs, std::vector<std::wstring> *vec, wchar_t *path, ListType list_type);
 
 // Third vtable
 
 DEF_FUNC(CreateList, std::vector<std::string> *, FileSystemArchiveNative *fs, std::vector<std::string> *list, char *
 	path, ListType list_type);
 DEF_FUNC(GetFile, void*, FileSystemArchiveNative *fs, char *file_str);
+DEF_FUNC(FileExists, bool, FileSystemArchiveNative *fs, char *file_str);
 
 // Pointers to original functions in case we need them
 struct OriginalFunctions
@@ -68,5 +73,8 @@ struct OriginalFunctions
 	AddAutoPath_t AddAutoPath;
 	CreateList_t CreateList;
 	GetFile_t GetFile;
+	FileExists_t FileExists;
 	GetFileWide_t GetFileWide;
+	FileExistsWide_t FileExistsWide;
+	CreateListWide_t CreateListWide;
 };
