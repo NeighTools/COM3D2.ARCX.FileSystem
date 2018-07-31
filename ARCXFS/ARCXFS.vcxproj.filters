@@ -57,11 +57,11 @@
     <ClInclude Include="LRUAllocator.h">
       <Filter>Header Files\FileAllocators\LRU</Filter>
     </ClInclude>
-    <ClInclude Include="LRUFileMemory.h">
-      <Filter>Header Files\FileAllocators\LRU</Filter>
-    </ClInclude>
     <ClInclude Include="PoolAllocator.h">
       <Filter>Header Files\FileAllocators\Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="AllocFileMemory.h">
+      <Filter>Header Files\FilePointers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +80,10 @@
     <ClCompile Include="LRUAllocator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LRUFileMemory.cpp">
+    <ClCompile Include="PoolAllocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllocFileMemory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

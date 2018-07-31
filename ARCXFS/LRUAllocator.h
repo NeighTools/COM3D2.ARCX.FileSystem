@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IAllocator.h"
-#include "LRUFileMemory.h"
+#include "AllocFileMemory.h"
 #include <unordered_map>
 #include <mutex>
 
@@ -23,6 +23,7 @@ public:
 	LRUAllocator(uint32_t file_cap, std::ofstream* logger);
 	FileMemory * load_file(ArcXFile *file) override;
 	~LRUAllocator() override;
+	void* get_file_data(ArcXFile* file) override;
 private:
 	std::unordered_map<ArcXFile*, FileSlot*> allocated_files;
 	uint32_t file_cap;
@@ -36,7 +37,6 @@ private:
 	void tick(FileSlot *slot);
 	void load_chunk(ArcXChunk *chunk);
 	void expand(uint64_t min_size);
-	void* get_file_data(ArcXFile* file);
 
-	friend class LRUFileMemory;
+	friend class AllocFileMemory;
 };

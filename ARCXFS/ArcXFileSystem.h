@@ -4,7 +4,7 @@
 #include <arcx.h>
 #include <map>
 #include <unordered_map>
-#include "LRUAllocator.h"
+#include "IAllocator.h"
 
 // Size od the filesystem object in quadwords
 #define FS_ARCHIVE_OBJECT_BASE_SIZE_QWORDS 0x10
@@ -38,7 +38,7 @@ struct ArcXArchiveData
 	std::vector<ArcXContainer*> containers;
 	std::unordered_map<std::wstring, ArcXFile*> files_by_name;
 	std::unordered_map<std::wstring_view, ArcXFile*> files_by_path;
-	LRUAllocator *allocator;
+	IAllocator *allocator;
 	// TODO: Add data
 };
 

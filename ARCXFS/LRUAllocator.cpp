@@ -177,7 +177,7 @@ void * LRUAllocator::get_file_data(ArcXFile *file)
 
 FileMemory * LRUAllocator::load_file(ArcXFile *file)
 {
-	return new LRUFileMemory(this, file, this->logger);
+	return new AllocFileMemory(this, file, this->logger);
 }
 
 LRUAllocator::~LRUAllocator()

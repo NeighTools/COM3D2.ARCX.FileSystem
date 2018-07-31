@@ -1,17 +1,15 @@
 #pragma once
 
 #include "FileMemory.h"
-#include "LRUAllocator.h"
+#include "IAllocator.h"
 #include <fstream>
 
-class LRUAllocator;
-
-class LRUFileMemory: public FileMemory
+class AllocFileMemory: public FileMemory
 {
 protected:
-	~LRUFileMemory() = default;
+	~AllocFileMemory();
 public:
-	LRUFileMemory(LRUAllocator *allocator, ArcXFile *file, std::ofstream* logger);
+	AllocFileMemory(IAllocator *allocator, ArcXFile *file, std::ofstream* logger);
 
 	FileMemory * dispose(bool disposing) override;
 	bool close_file() override;
@@ -27,8 +25,9 @@ public:
 	size_t move_memory(void *dest, void *src, size_t len) override;
 
 private:
-	LRUAllocator *allocator;
+	IAllocator *allocator;
 	ArcXFile *file;
 	uint64_t read_pos;
 	std::ofstream* logger;
+	char* data;
 };
